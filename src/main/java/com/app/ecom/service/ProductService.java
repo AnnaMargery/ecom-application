@@ -47,4 +47,10 @@ public class ProductService {
                     return true;
                 }).orElse(false);
     }
+
+    public List<ProductResponse> searchByKeyword(String keyword) {
+        return productRepository.searchByKeyword(keyword).stream()
+                .map(productMapper::mapToProductResponse)
+                .toList();
+    }
 }
