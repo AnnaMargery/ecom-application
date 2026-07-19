@@ -8,11 +8,11 @@ import lombok.Data;
 @Builder
 public class UserResponse {
 
-    private String id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phoneNumber;
-    private UserRole role;
-    private AddressDto address;
+	private String id;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String phoneNumber;
+	private UserRole role;
+	private AddressDto address;
 }
