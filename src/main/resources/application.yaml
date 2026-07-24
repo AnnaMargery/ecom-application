@@ -5,15 +5,14 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/ecomdb
-    username: test
-    password: test
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ecomdb}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     database: POSTGRESQL
-    show-sql: true
+    show-sql: ${SHOW_SQL}
     hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: ${DDL_AUTO}
 
 #Actuator management - some endpoints were enabled for learning purpose
 management:
@@ -23,7 +22,7 @@ management:
         include: health, info, metrics, env, loggers
   endpoint:
     health:
-      show-details: always
+      show-details: ${HEALTH_SHOW_DETAILS}
   info:
       env:
         enabled: true
