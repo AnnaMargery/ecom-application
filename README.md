@@ -1,2 +1,2 @@
 # ecom-application
-Microservices eCommerce project
+Monolith eCommerce project
